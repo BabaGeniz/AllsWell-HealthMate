@@ -8,11 +8,19 @@ using YourNamespace.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Entity Framework to use SQL Server with the connection string
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<HealthMateDbContext>(options =>
+{
+    options.UseSqlServer("Server=DESKTOP-IEIE0FB\\SQLEXPRESS;Database=HealthMateDB;Trusted_Connection=True;TrustServerCertificate=True");
+});
+    
 
-// Register other services, like repositories and services
+//options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>(); 
+
+
+// Register services
 builder.Services.AddScoped<IUserService, UserService>(); 
 
 // Add services to the container.
