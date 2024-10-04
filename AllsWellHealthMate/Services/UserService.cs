@@ -23,7 +23,10 @@ namespace AllsWellHealthMate.Services
         {
             return _userRepository.GetUserById(id);
         }
-
+        public User GetUserByFirstName(string name)
+        {
+            return _userRepository.GetUserByName(name);
+        }
         public User CreateUser(UserCreateDTO userCreateDTO)
         {
             // Mapping of DTO properties to regular properties
@@ -31,15 +34,26 @@ namespace AllsWellHealthMate.Services
             {
                 FirstName = userCreateDTO.FirstName,
                 LastName = userCreateDTO.LastName,
-                Email = userCreateDTO.Email
+                Email = userCreateDTO.Email,
+
             };
             _userRepository.AddUser(user);
             return user; //returns created user with id
         }
 
-        public void UpdateUser(User user)
+        public User UpdateUser(int id, UserDTO userDTO)
         {
-            _userRepository.UpdateUser(user);
+            var existingUser = _userRepository.GetUserById(id);
+            
+
+            // Update the fields from DTO
+            existingUser.FirstName = userDTO.FirstName;
+            existingUser.LastName = userDTO.LastName;
+            existingUser.Email = userDTO.Email;
+            existingUser.Age = userDTO.Age;
+
+            _userRepository.UpdateUser(existingUser);  // Save the updated user to the database
+            return (existingUser);
         }
 
         public void DeleteUser(int id)
