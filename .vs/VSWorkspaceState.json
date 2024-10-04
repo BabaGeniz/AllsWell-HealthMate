@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\AllsWellHealthMate",
-    "\\AllsWellHealthMate\\Controllers"
+    "\\AllsWellHealthMate\\Data",
+    "\\AllsWellHealthMate\\Models"
   ],
-  "SelectedNode": "\\AllsWellHealthMate\\Controllers\\WeatherForecastController.cs",
   "PreviewInSolutionExplorer": false
 }
