@@ -26,10 +26,9 @@ namespace YourNamespace.Repositories
             return _context.Users.SingleOrDefault(u => u.Id == id);
         }
 
-        public User? GetUserByName(string firstname)
+        public User GetUserByName(string firstname)
         {
-            return _context.Users
-                           .FirstOrDefault(u => u.FirstName == firstname);
+            return _context.Users.First(u => u.FirstName == firstname);
         }
 
         public void AddUser(User user)

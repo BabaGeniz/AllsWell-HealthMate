@@ -8,8 +8,9 @@ namespace AllsWellHealthMate.Services
     {
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
-        User CreateUser(UserCreateDTO user);
-        void UpdateUser(User user);
+        User GetUserByFirstName(string name);
+        User CreateUser(UserCreateDTO userCreateDTO);
+        User UpdateUser(int id, UserDTO userDTO);
         void DeleteUser(int id);
     }
 }
