@@ -1,6 +1,7 @@
 using AllsWellHealthMate.Models;
 using AllsWellHealthMate.Repositories;
 using AllsWellHealthMate.Services;
+using AllsWellHealthMate.DTOs;
 
 namespace AllsWellHealthMate.Services
 {
@@ -23,9 +24,17 @@ namespace AllsWellHealthMate.Services
             return _userRepository.GetUserById(id);
         }
 
-        public void CreateUser(User user)
+        public User CreateUser(UserCreateDTO userCreateDTO)
         {
+            // Mapping of DTO properties to regular properties
+            var user = new User
+            {
+                FirstName = userCreateDTO.FirstName,
+                LastName = userCreateDTO.LastName,
+                Email = userCreateDTO.Email
+            };
             _userRepository.AddUser(user);
+            return user; //returns created user with id
         }
 
         public void UpdateUser(User user)
