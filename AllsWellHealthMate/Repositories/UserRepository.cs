@@ -9,9 +9,9 @@ namespace YourNamespace.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly HealthMateDbContext _context;
 
-        public UserRepository(ApplicationDbContext context)
+        public UserRepository(HealthMateDbContext context)
         {
             _context = context;
         }
