@@ -23,7 +23,7 @@ namespace YourNamespace.Repositories
 
         public User GetUserById(int id)
         {
-            return _context.Users.First(u => u.Id == id);
+            return _context.Users.SingleOrDefault(u => u.Id == id);
         }
 
         public User? GetUserByName(string firstname)
@@ -35,7 +35,7 @@ namespace YourNamespace.Repositories
         public void AddUser(User user)
         {
             _context.Users.Add(user); // Add user to the context
-            _context.SaveChanges(); // Save changes to the database
+            _context.SaveChanges(); // Saving changes to generate the Id
         }
 
         // Update an existing user

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using AllsWellHealthMate.Models;
 using AllsWellHealthMate.Services;
+using AllsWellHealthMate.DTOs;
 using System.Collections.Generic;
 
 namespace AllsWellHealthMate.Controllers
@@ -36,10 +37,12 @@ namespace AllsWellHealthMate.Controllers
 
         [HttpPost]
         [Route("CreateUser")]
-        public ActionResult<User> CreateUser(User user)
+        public IActionResult CreateUser([FromBody] UserCreateDTO userCreateDTO)
         {
-            _userService.CreateUser(user);
-            return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, user);
+            if (!ModelState.IsValid){return BadRequest(ModelState);}
+
+            var createdUser = _userService.CreateUser(userCreateDTO);  // Delegate to service
+            return CreatedAtAction(nameof(GetUserById), new { id = createdUser.Id }, createdUser);
         }
 
         [HttpPost]
