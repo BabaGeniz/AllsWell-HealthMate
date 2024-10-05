@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AllsWellHealthMate",
-    "\\AllsWellHealthMate\\Controllers",
-    "\\AllsWellHealthMate\\Repositories",
-    "\\AllsWellHealthMate\\Services",
+    "\\AllsWellHealthMate\\Repositories\\IRepositories",
     "\\AllsWellHealthMate\\Services\\IServices"
   ],
-  "SelectedNode": "\\AllsWellHealthMate\\Controllers\\AppointmentController.cs",
+  "SelectedNode": "\\AllsWellHealthMate\\Controllers",
   "PreviewInSolutionExplorer": false
 }
