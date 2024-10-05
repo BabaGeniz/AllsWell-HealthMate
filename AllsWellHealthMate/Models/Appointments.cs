@@ -9,7 +9,7 @@ namespace AllsWellHealthMate.Models
         [Key]
         public int Id { get; set; } // Primary Key
 
-        [ForeignKey("Patient")]
+        [ForeignKey("User")]
         public int UserId { get; set; } // Foreign Key to Users (Patients)
 
 
@@ -21,7 +21,7 @@ namespace AllsWellHealthMate.Models
 
         public string AppointmentType { get; set; } // Type of the appointment (e.g., "Consultation", "Follow-up")
         public string Status { get; set; } = "Scheduled"; // Appointment status (e.g., "Scheduled", "Completed", "Cancelled")
-        public string Location { get; set; } // Physical or virtual location for the appointment
+        public string Reason { get; set; } // Reason for appointment
 
         [ForeignKey("CreatedByUser")]
         public int CreatedBy { get; set; } // Foreign key to User who created the appointment

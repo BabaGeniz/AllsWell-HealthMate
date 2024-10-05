@@ -51,6 +51,7 @@ namespace AllsWellHealthMate.Services
             existingUser.LastName = userDTO.LastName;
             existingUser.Email = userDTO.Email;
             existingUser.Age = userDTO.Age;
+            existingUser.Height = userDTO.Height;
 
             _userRepository.UpdateUser(existingUser);  // Save the updated user to the database
             return (existingUser);

@@ -10,6 +10,7 @@ namespace AllsWellHealthMate.Models
         public string Email { get; set; }
 
         public int Age { get; set; }
+        public int Height { get; set; }
         public bool IsActive { get; set; } = true; // Default to true
         
         // Navigation properties for foreign keys

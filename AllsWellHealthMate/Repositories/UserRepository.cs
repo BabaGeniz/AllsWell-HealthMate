@@ -5,7 +5,7 @@ using AllsWellHealthMate.Data;
 using AllsWellHealthMate.Models;
 using AllsWellHealthMate.Repositories;
 
-namespace YourNamespace.Repositories
+namespace AllsWellHealthMate.Repositories
 {
     public class UserRepository : IUserRepository
     {
