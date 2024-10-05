@@ -47,9 +47,9 @@ namespace AllsWellHealthMate.Controllers
 
         [HttpPost]
         [Route("UpdateUser")]
-        public IActionResult UpdateUser(User user)
+        public IActionResult UpdateUser(int id ,UserDTO userDTO)
         {
-            _userService.UpdateUser(user);
+            _userService.UpdateUser(id,userDTO);
             return NoContent();
         }
 

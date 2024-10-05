@@ -4,6 +4,7 @@ using AllsWellHealthMate.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllsWellHealthMate.Migrations
 {
     [DbContext(typeof(HealthMateDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241005003839_AddAppointmentsAndProviderTable")]
+    partial class AddAppointmentsAndProviderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,31 +24,6 @@ namespace AllsWellHealthMate.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.Allergy", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("AllergyName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DateIdentified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("HealthRecordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HealthRecordId");
-
-                    b.ToTable("Allergy");
-                });
 
             modelBuilder.Entity("AllsWellHealthMate.Models.Appointment", b =>
                 {
@@ -68,12 +46,12 @@ namespace AllsWellHealthMate.Migrations
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProviderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Reason")
+                    b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProviderId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -105,6 +83,9 @@ namespace AllsWellHealthMate.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Allergies")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
 
@@ -118,6 +99,9 @@ namespace AllsWellHealthMate.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("MedicalHistory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prescriptions")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ScheduledAppointments")
@@ -138,42 +122,6 @@ namespace AllsWellHealthMate.Migrations
                         .IsUnique();
 
                     b.ToTable("HealthRecords");
-                });
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.Prescription", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DatePrescribed")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Dosage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DrugName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("HealthRecordId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PrescribingDoctor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HealthRecordId");
-
-                    b.ToTable("Prescription");
                 });
 
             modelBuilder.Entity("AllsWellHealthMate.Models.Provider", b =>
@@ -233,9 +181,6 @@ namespace AllsWellHealthMate.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Height")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -246,15 +191,6 @@ namespace AllsWellHealthMate.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.Allergy", b =>
-                {
-                    b.HasOne("AllsWellHealthMate.Models.HealthRecord", null)
-                        .WithMany("Allergies")
-                        .HasForeignKey("HealthRecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("AllsWellHealthMate.Models.Appointment", b =>
@@ -279,22 +215,6 @@ namespace AllsWellHealthMate.Migrations
                         .HasForeignKey("AllsWellHealthMate.Models.HealthRecord", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.Prescription", b =>
-                {
-                    b.HasOne("AllsWellHealthMate.Models.HealthRecord", null)
-                        .WithMany("Prescriptions")
-                        .HasForeignKey("HealthRecordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.HealthRecord", b =>
-                {
-                    b.Navigation("Allergies");
-
-                    b.Navigation("Prescriptions");
                 });
 
             modelBuilder.Entity("AllsWellHealthMate.Models.Provider", b =>

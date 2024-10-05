@@ -3,7 +3,6 @@ using AllsWellHealthMate.Repositories;
 using AllsWellHealthMate.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using YourNamespace.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,11 +16,13 @@ builder.Services.AddDbContext<HealthMateDbContext>(options =>
 //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register repositories
-builder.Services.AddScoped<IUserRepository, UserRepository>(); 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
 
 // Register services
 builder.Services.AddScoped<IUserService, UserService>(); 
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
