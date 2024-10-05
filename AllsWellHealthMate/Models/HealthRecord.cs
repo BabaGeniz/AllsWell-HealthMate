@@ -1,8 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
 namespace AllsWellHealthMate.Models
 {
     public class HealthRecord
-    {
-        public int RecordId { get; set; } // Primary Key
+    { 
+        public int Id { get; set; } // Primary Key
         public int UserId { get; set; } // Foreign Key
         public DateTime DateOfRecord { get; set; }
         public string? MedicalHistory { get; set; }

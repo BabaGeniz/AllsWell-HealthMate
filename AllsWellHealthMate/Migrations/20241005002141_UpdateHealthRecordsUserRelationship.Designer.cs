@@ -4,6 +4,7 @@ using AllsWellHealthMate.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllsWellHealthMate.Migrations
 {
     [DbContext(typeof(HealthMateDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241005002141_UpdateHealthRecordsUserRelationship")]
+    partial class UpdateHealthRecordsUserRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,56 +24,6 @@ namespace AllsWellHealthMate.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("AllsWellHealthMate.Models.Appointment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("AppointmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("AppointmentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProviderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProviderId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Appointments");
-                });
 
             modelBuilder.Entity("AllsWellHealthMate.Models.HealthRecord", b =>
                 {
@@ -121,44 +74,6 @@ namespace AllsWellHealthMate.Migrations
                     b.ToTable("HealthRecords");
                 });
 
-            modelBuilder.Entity("AllsWellHealthMate.Models.Provider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Specialization")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Providers");
-                });
-
             modelBuilder.Entity("AllsWellHealthMate.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -190,21 +105,6 @@ namespace AllsWellHealthMate.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("AllsWellHealthMate.Models.Appointment", b =>
-                {
-                    b.HasOne("AllsWellHealthMate.Models.Provider", null)
-                        .WithMany("Appointments")
-                        .HasForeignKey("ProviderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllsWellHealthMate.Models.User", null)
-                        .WithMany("Appointments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("AllsWellHealthMate.Models.HealthRecord", b =>
                 {
                     b.HasOne("AllsWellHealthMate.Models.User", null)
@@ -214,15 +114,8 @@ namespace AllsWellHealthMate.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AllsWellHealthMate.Models.Provider", b =>
-                {
-                    b.Navigation("Appointments");
-                });
-
             modelBuilder.Entity("AllsWellHealthMate.Models.User", b =>
                 {
-                    b.Navigation("Appointments");
-
                     b.Navigation("HealthRecord");
                 });
 #pragma warning restore 612, 618
