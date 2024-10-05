@@ -12,6 +12,8 @@ namespace AllsWellHealthMate.Models
         public DateTime UpdatedAt { get; set; } = DateTime.Now; // Record last update time
 
         public bool IsActive { get; set; } = true; // Indicates whether the provider is currently active
+        
+        // Navigation properties
         public ICollection<Appointment>? Appointments { get; set; }
 
     }
