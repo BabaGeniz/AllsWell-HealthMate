@@ -15,6 +15,7 @@ namespace AllsWellHealthMate.DTOs
 		[Required]
 		[EmailAddress]
 		public string Email { get; set; }
+		public int UserRole { get; set; }
 	}
 	public class UserDTO
 	{
@@ -24,4 +25,14 @@ namespace AllsWellHealthMate.DTOs
 		public int Age { get; set; }
 		public int Height { get; set; } // In cm
 	}
+    public class ProviderDTO
+    {	
+        public string Specialization { get; set; } // Area of specialization (e.g., Cardiologist)
+        public string HospitalAffiliation { get; set; }
+    }
+    public class UserWrapperDTO
+    {
+        public UserCreateDTO userCreateDTO { get; set; }
+        public ProviderDTO providerDTO { get; set; }
+    }
 }
