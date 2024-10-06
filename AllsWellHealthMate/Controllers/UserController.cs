@@ -35,6 +35,13 @@ namespace AllsWellHealthMate.Controllers
             return Ok(user);
         }
 
+        [HttpGet("GetUsersByRole/{role}")]
+        public ActionResult<IEnumerable<User>> GetUsersByRole(int role)
+        {
+            var users = _userService.GetListOfUsersByRole(role);
+            return Ok(users);
+        }
+
         [HttpPost]
         [Route("CreateUser")]
         public IActionResult CreateUser([FromBody] UserWrapperDTO userWrapperDTO)
