@@ -32,6 +32,16 @@ namespace AllsWellHealthMate.Services
         {
             return _userRepository.GetUserByName(name);
         }
+        public IEnumerable<User> GetListOfUsersByRole(int role)
+        {
+            if(role == (int)UserRoleEnum.Doctor)
+            {
+                return _userRepository.GetAllUsers().Where(u => u.UserRole == UserRoleEnum.Doctor.ToString());
+            }
+            else { 
+                return _userRepository.GetAllUsers().Where(u => u.UserRole == UserRoleEnum.Patient.ToString()); 
+            }
+        }
         public User CreateUser(UserCreateDTO userCreateDTO)
         {
             UserRoleEnum role = (UserRoleEnum)userCreateDTO.UserRole;

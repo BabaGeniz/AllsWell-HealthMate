@@ -9,6 +9,7 @@ namespace AllsWellHealthMate.Services
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
         User GetUserByFirstName(string name);
+        IEnumerable<User> GetListOfUsersByRole(int role);
         User CreateUser(UserCreateDTO userCreateDTO);
         Provider CreateProvider(int userId, UserWrapperDTO userWrapperDTO);
         User UpdateUser(int id, UserDTO userDTO);
