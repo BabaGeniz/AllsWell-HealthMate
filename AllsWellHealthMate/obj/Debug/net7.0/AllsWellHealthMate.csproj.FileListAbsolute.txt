@@ -1,3 +1,10 @@
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.csproj.AssemblyReference.cache
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.AssemblyInfoInputs.cache
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.AssemblyInfo.cs
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.csproj.CoreCompileInputs.cache
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\appsettings.json
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\AllsWellHealthMate.exe
@@ -53,13 +60,6 @@ C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-Heal
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.csproj.AssemblyReference.cache
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.AssemblyInfoInputs.cache
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.AssemblyInfo.cs
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.csproj.CoreCompileInputs.cache
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\AllsWellHealthMate.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\staticwebassets\msbuild.AllsWellHealthMate.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\staticwebassets\msbuild.build.AllsWellHealthMate.props
 C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\AllsWellHealthMate\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.AllsWellHealthMate.props

@@ -10,6 +10,7 @@ namespace AllsWellHealthMate.Services
         User GetUserById(int id);
         User GetUserByFirstName(string name);
         User CreateUser(UserCreateDTO userCreateDTO);
+        Provider CreateProvider(int userId, UserWrapperDTO userWrapperDTO);
         User UpdateUser(int id, UserDTO userDTO);
         void DeleteUser(int id);
     }

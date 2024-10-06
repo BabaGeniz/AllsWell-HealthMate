@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AllsWellHealthMate",
+    "\\AllsWellHealthMate\\DTOs",
+    "\\AllsWellHealthMate\\Models",
+    "\\AllsWellHealthMate\\Repositories",
+    "\\AllsWellHealthMate\\Services\\IServices"
   ],
+  "SelectedNode": "\\AllsWellHealthMate\\Models\\Provider.cs",
   "PreviewInSolutionExplorer": false
 }

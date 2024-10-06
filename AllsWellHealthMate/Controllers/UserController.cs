@@ -37,11 +37,16 @@ namespace AllsWellHealthMate.Controllers
 
         [HttpPost]
         [Route("CreateUser")]
-        public IActionResult CreateUser([FromBody] UserCreateDTO userCreateDTO)
+        public IActionResult CreateUser([FromBody] UserWrapperDTO userWrapperDTO)
         {
-            if (!ModelState.IsValid){return BadRequest(ModelState);}
+            
+            var createdUser = _userService.CreateUser(userWrapperDTO.userCreateDTO);
 
-            var createdUser = _userService.CreateUser(userCreateDTO);  // Delegate to service
+            if(userWrapperDTO.userCreateDTO.UserRole == (int)UserRoleEnum.Doctor)
+            {
+                var createdProvider = _userService.CreateProvider(createdUser.Id, userWrapperDTO);
+            }            
+
             return CreatedAtAction(nameof(GetUserById), new { id = createdUser.Id }, createdUser);
         }
 
