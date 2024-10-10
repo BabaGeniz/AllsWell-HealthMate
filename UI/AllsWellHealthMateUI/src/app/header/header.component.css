@@ -1,0 +1,64 @@
+/* Top bar styling */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #f8f8f8;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none; /* Remove underline globally for all links */
+}
+.contact-info,
+.opening-hours {
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons .btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  padding-right: 40%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding-top:20px;
+
+}
+
+  .menu li {
+    display: inline;
+  }
+
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+.logo {
+  background-image: url('../../assets/logo.jpg'); /* URL for the logo image */
+  background-size: contain; /* Ensure the logo fits within the container */
+  background-repeat: no-repeat; /* Prevent repeating */
+  height: 100px; /* Set desired height for the logo */
+  width: 100px; /* Set desired width for the logo */
+  top: 20px; /* Adjust as needed for vertical positioning */
+  left: 20px; /* Adjust as needed for horizontal positioning */
+ 
+}

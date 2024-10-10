@@ -29,7 +29,7 @@ namespace AllsWellHealthMate.Repositories
             _context.SaveChanges(); // Saving changes to generate the Id
         }
 
-        public void DeleteAppointment(int id)
+        public void DeleteProvider(int id)
         {
             var provider = _context.Providers.Find(id); // Find user by ID
             if (provider != null)
