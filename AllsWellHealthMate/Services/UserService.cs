@@ -51,8 +51,7 @@ namespace AllsWellHealthMate.Services
                 FirstName = userCreateDTO.FirstName,
                 LastName = userCreateDTO.LastName,
                 Email = userCreateDTO.Email,
-                UserRole = role.ToString(),
-                
+                UserRole = role.ToString()                
             };
             
             _userRepository.AddUser(user);
@@ -66,7 +65,7 @@ namespace AllsWellHealthMate.Services
                 FirstName = userWrapperDTO.userCreateDTO.FirstName,
                 LastName = userWrapperDTO.userCreateDTO.LastName,
                 Email = userWrapperDTO.userCreateDTO.Email,
-                //UserId = userId,
+                UserId = userId,   
                 Specialization = userWrapperDTO.providerDTO.Specialization,
                 HospitalAffiliation = userWrapperDTO.providerDTO.HospitalAffiliation
                     
@@ -79,16 +78,19 @@ namespace AllsWellHealthMate.Services
         {
             var existingUser = _userRepository.GetUserById(id);
             
+            if(existingUser != null)
+            {
+                // Update the fields from DTO
+                existingUser.FirstName = userDTO.FirstName;
+                existingUser.LastName = userDTO.LastName;
+                existingUser.Email = userDTO.Email;
+                existingUser.Age = userDTO.Age;
+                existingUser.Height = userDTO.Height;
 
-            // Update the fields from DTO
-            existingUser.FirstName = userDTO.FirstName;
-            existingUser.LastName = userDTO.LastName;
-            existingUser.Email = userDTO.Email;
-            existingUser.Age = userDTO.Age;
-            existingUser.Height = userDTO.Height;
-
-            _userRepository.UpdateUser(existingUser);  // Save the updated user to the database
-            return (existingUser);
+                _userRepository.UpdateUser(existingUser);  // Save the updated user to the database
+            }
+            
+            return existingUser;
         }
 
         public void DeleteUser(int id)

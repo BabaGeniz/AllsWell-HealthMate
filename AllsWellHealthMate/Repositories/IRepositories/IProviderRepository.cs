@@ -8,6 +8,6 @@ namespace AllsWellHealthMate.Repositories
         IEnumerable<Provider> GetAllProviders();
         Provider GetProviderById(int id);
         void AddProvider(Provider provider);
-        void DeleteAppointment(int id);
+        void DeleteProvider(int id);
     }
 }

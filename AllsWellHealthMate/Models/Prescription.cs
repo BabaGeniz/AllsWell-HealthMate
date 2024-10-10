@@ -15,8 +15,13 @@ namespace AllsWellHealthMate.Models
         public string DrugName { get; set; } // Name of the prescribed drug
         public string Dosage { get; set; } // Dosage instructions
         public DateTime DatePrescribed { get; set; } // Date when the prescription was written
-        public string PrescribingDoctor { get; set; } // Name or ID of the prescribing doctor
+        [ForeignKey("Provider")]
+        public int ProviderId { get; set; }
+        public string? PrescribingDoctor { get; set; } // Name or ID of the prescribing doctor
 
         public bool IsActive { get; set; } = true; // Whether the prescription is currently active (e.g., still valid)
+
+        // Navigation property
+        public HealthRecord HealthRecord { get; set; }
     }
 }

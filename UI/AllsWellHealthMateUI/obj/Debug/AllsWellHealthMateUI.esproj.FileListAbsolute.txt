@@ -1,0 +1,2 @@
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\UI\AllsWellHealthMateUI\obj\Debug\AllsWellHealthMateUI.esproj.SuggestedBindingRedirects.cache
+C:\Users\Ugo\Desktop\CSC 594\PRoject Files\AllsWell-HealthMateCode\AllsWell-HealthMate\UI\AllsWellHealthMateUI\obj\Debug\AllsWellHealthMateUI.esproj.CoreCompileInputs.cache

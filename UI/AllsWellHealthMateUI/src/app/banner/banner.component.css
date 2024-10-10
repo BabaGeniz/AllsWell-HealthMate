@@ -1,0 +1,51 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  gap:300px;
+  align-items: center;
+  background: url('../../assets/lab-background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 50px 100px 0px 50px;
+  color: #fff;
+}
+
+.banner-content {
+  max-width: 50%;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.banner-buttons .btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.doctor-image {
+  background-image: url('../../assets/doctor2.png');
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  height: 500px; /* Set to desired height */
+  width: 500px; /* Set to desired width */
+  left: 50%; /* Start positioning from the center */
+  transform: translateX(-50%); /* Center the image horizontally */
+}

@@ -12,6 +12,8 @@ namespace AllsWellHealthMate.Data
         public DbSet<HealthRecord> HealthRecords {get;set;}
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Provider> Providers { get; set; }
+        public DbSet<Allergy> Allergies { get; set; }
+        public DbSet<Prescription> Prescriptions { get; set; }
 
     }
 }
