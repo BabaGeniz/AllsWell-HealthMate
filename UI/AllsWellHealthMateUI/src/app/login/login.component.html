@@ -1,0 +1,25 @@
+<div class="login-container">
+  <h2>ALLSWELL HEALTHMATE LOGIN</h2>
+
+  <h4>Hello, Please enter login details below</h4>
+  <!-- Email Field -->
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter your email" [(ngModel)]="email">
+  </mat-form-field>
+
+  <!-- Password Field -->
+  <mat-form-field class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Enter your password" type="password" [(ngModel)]="password">
+  </mat-form-field>
+
+  <!-- Forgot Password -->
+  <a class="forgot-password" href="#">Forgot?</a>
+
+  <!-- Login and Signup Buttons -->
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+    <a routerLink="/signup" mat-button>Signup</a>
+  </div>
+</div>

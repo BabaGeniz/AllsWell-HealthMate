@@ -1,0 +1,98 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.account-type-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.account-type {
+  cursor: pointer;
+  margin: 0 15px;
+  text-align: center;
+  padding: 10px;
+}
+
+  .account-type img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .account-type p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+.doctor-emoji {
+  background-image: url('../../assets/doctorLoginEmoji.png'); /* Replace with the actual doctor image path */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  height: 200px; /* Set to desired height */
+  width: 200px; /* Set to desired width */
+  opacity: 0.8; /* Initial opacity */
+  border: 1px solid rgba(0, 123, 255, 0.5);
+  border-radius: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition effect */
+}
+
+.patient-emoji {
+  background-image: url('../../assets/patientLoginEmoji.png'); /* Replace with the actual patient image path */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  height: 200px; /* Set to desired height */
+  width: 200px; /* Set to desired width */
+  border: 1px solid rgba(0, 123, 255, 0.5);
+  border-radius: 10px;
+  opacity: 0.8; /* Initial opacity */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition effect */
+}
+
+.doctor-emoji:hover {
+  border: 2px solid rgba(0, 123, 255, 1);
+  opacity: 1; /* Increase opacity on hover */
+  transform: scale(1.1);
+}
+.patient-emoji:hover {
+  border: 2px solid rgba(0, 123, 255, 1);
+  opacity: 1; /* Increase opacity on hover */
+  transform: scale(1.1);
+}
+
+.doctor-emoji.selected {
+  border: 2px solid rgba(0, 123, 255, 1);
+  opacity: 1; /* Ensure opacity is at full */
+  transform: scale(1.1); /* Ensure the enlarged size */
+}
+.patient-emoji.selected {
+  border: 2px solid rgba(0, 123, 255, 1);
+  opacity: 1; /* Ensure opacity is at full */
+  transform: scale(1.1); /* Ensure the enlarged size */
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

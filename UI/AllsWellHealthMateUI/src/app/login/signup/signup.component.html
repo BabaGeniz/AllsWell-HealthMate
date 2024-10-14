@@ -1,0 +1,61 @@
+<div class="signup-container">
+  <h2>Choose Account Type</h2>
+
+  <!-- Account Type Selection -->
+  <div class="account-type-selection">
+    <div class="account-type" [class.selected]="isSelected('doctor')" (click)="selectAccountType('doctor')">
+      <div class="doctor-emoji" [ngClass]="{ selected: isSelected('doctor') }">
+      </div>
+      <p>Doctor</p>
+    </div>
+    <div class="account-type" [class.selected]="isSelected('patient')" (click)="selectAccountType('patient')">
+      <div class="patient-emoji" [ngClass]="{ selected: isSelected('patient') }"></div>
+      <p>Patient</p>
+    </div>
+  </div>
+
+  <h4 *ngIf="accountType">Hello {{ accountType }}! Please fill out the form below to get started</h4>
+
+  <!-- First Name Field -->
+  <mat-form-field class="full-width">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="Enter your first name" [(ngModel)]="firstname">
+  </mat-form-field>
+
+  <!-- Last Name Field -->
+  <mat-form-field class="full-width">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Enter your last name" [(ngModel)]="lastname">
+  </mat-form-field>
+
+  <!-- Email Field -->
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter your email" [(ngModel)]="email">
+  </mat-form-field>
+
+  <!-- Password Field -->
+  <mat-form-field class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Enter your password" type="password" [(ngModel)]="password">
+  </mat-form-field>
+
+  <ng-container *ngIf="accountType === 'doctor'">
+    <!-- License Number Field -->
+    <mat-form-field class="full-width">
+      <mat-label>License Number</mat-label>
+      <input matInput placeholder="Enter your license number" [(ngModel)]="licenseNumber">
+    </mat-form-field>
+
+    <!-- Specialty Field -->
+    <mat-form-field class="full-width">
+      <mat-label>Specialization</mat-label>
+      <input matInput placeholder="Enter your specialization" [(ngModel)]="specialization">
+    </mat-form-field>
+  </ng-container>
+
+  <!-- Login Button -->
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="signup()">SignUp</button>
+  </div>
+</div>
