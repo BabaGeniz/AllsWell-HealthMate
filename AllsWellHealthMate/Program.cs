@@ -13,7 +13,16 @@ builder.Services.AddDbContext<HealthMateDbContext>(options =>
    options.UseSqlServer("Server=DESKTOP-IEIE0FB\\SQLEXPRESS;Database=HealthMateDB;Trusted_Connection=True;TrustServerCertificate=True");
 });
 
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 
 //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -56,6 +65,7 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseRouting();
+app.UseCors("AllowAllOrigins"); // Enable CORS
 app.UseAuthorization();
 app.MapControllers();
 
