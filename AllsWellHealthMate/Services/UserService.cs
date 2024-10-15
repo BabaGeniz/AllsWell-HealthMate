@@ -51,6 +51,7 @@ namespace AllsWellHealthMate.Services
                 FirstName = userCreateDTO.FirstName,
                 LastName = userCreateDTO.LastName,
                 Email = userCreateDTO.Email,
+                Password = userCreateDTO.Password,
                 UserRole = role.ToString()                
             };
             
@@ -85,6 +86,7 @@ namespace AllsWellHealthMate.Services
                 existingUser.LastName = userDTO.LastName;
                 existingUser.Email = userDTO.Email;
                 existingUser.Age = userDTO.Age;
+                existingUser.Password = userDTO.Password;
                 existingUser.Height = userDTO.Height;
 
                 _userRepository.UpdateUser(existingUser);  // Save the updated user to the database

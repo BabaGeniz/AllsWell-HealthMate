@@ -6,7 +6,11 @@
     <div class="opening-hours">
       <i class="fas fa-clock"></i> Mon - Sun: 9 am - 11 pm
     </div>
-    <div class="header-buttons">
+    <div *ngIf="authService.isAuthenticated()" class="header-buttons">
+      <a (click)="logout()" class="btn">SignOut</a>
+      <a href="#" class="btn">Profile</a>
+    </div>
+    <div *ngIf="!authService.isAuthenticated()" class="header-buttons">
       <a routerLink="/login" class="btn">Login</a>
       <a href="#" class="btn">Appointment</a>
     </div>

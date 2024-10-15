@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\UI",
+    "\\UI\\AllsWellHealthMateUI",
+    "\\UI\\AllsWellHealthMateUI\\src",
+    "\\UI\\AllsWellHealthMateUI\\src\\app",
+    "\\UI\\AllsWellHealthMateUI\\src\\app\\header",
+    "\\UI\\AllsWellHealthMateUI\\src\\app\\home",
+    "\\UI\\AllsWellHealthMateUI\\src\\app\\login",
+    "\\UI\\AllsWellHealthMateUI\\src\\app\\login\\signup",
+    "\\UI\\AllsWellHealthMateUI\\src\\app\\services"
   ],
-  "SelectedNode": "\\AllsWell-HealthMate.sln",
+  "SelectedNode": "\\UI\\AllsWellHealthMateUI\\src\\app\\home\\home.component.html",
   "PreviewInSolutionExplorer": false
 }
