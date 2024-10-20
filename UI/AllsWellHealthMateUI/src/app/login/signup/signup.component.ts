@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Provider, UserCreate, UserDTO } from '../../models/user.model';
 import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router'; // Import Router
+import { AuthService } from '../../services/auth.service';
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -15,16 +19,19 @@ export class SignupComponent {
   licenseNumber: string = '';
   specialization: string = '';
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router, public authService: AuthService) { }
 
   selectAccountType(type: string): void {
+    
     this.accountType = type;
   }
 
   isSelected(type: string): boolean {
+    
     return this.accountType === type;
   }
 
+  
   signup(): void {
     const userData: UserCreate = {
       firstName: this.firstname,
@@ -44,14 +51,16 @@ export class SignupComponent {
       providerDTO: provider
     }
 
+    this.authService.setUserRole(userData.userRole);
+    
     this.apiService.createUser(userDTO).subscribe(
-      response => {
+      (response) => {
         console.log('Data sent successfully:', response);
+        this.router.navigate(['/login']);
       }, error => {
         console.error('Error sending data:', error);
       }
-    );
-
+    );    
 
   }
 }

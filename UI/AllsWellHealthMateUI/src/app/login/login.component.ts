@@ -13,7 +13,7 @@ export class LoginComponent {
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
-
+  
   login(): void {
     
     this.authService.login(this.email, this.password).subscribe(
@@ -31,8 +31,7 @@ export class LoginComponent {
         this.errorMessage = "Incorrect UserName or Password. Try Again!";
 
       }
-    );
-    
+    );  
     
   }
 }

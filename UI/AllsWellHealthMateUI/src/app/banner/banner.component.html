@@ -3,8 +3,16 @@
     <h1>Providing Total Health Solutions</h1>
     <p>Health Management System</p>
     <div class="banner-buttons">
-      <button class="btn btn-primary">Schedule Appointment</button>
-      <button class="btn btn-secondary">View Health Records</button>
+      <button *ngIf="!authService.isPatient() && !authService.isDoctor()" class="btn btn-primary">Schedule Appointment</button>
+      <button *ngIf="!authService.isPatient() && !authService.isDoctor()" class="btn btn-secondary">View Health Records</button>
+
+      <button *ngIf="authService.isPatient()" class="btn btn-primary">Schedule Appointment</button>
+      <button *ngIf="authService.isPatient()" class="btn btn-secondary">View Health Records</button>
+
+      <button *ngIf="authService.isDoctor()" class="btn btn-primary">View Appointments</button>
+      <button *ngIf="authService.isDoctor()" class="btn btn-secondary">Create New Patient Record</button>
+      <button *ngIf="authService.isDoctor()" class="btn btn-secondary">View/Update Patient Record</button>
+
     </div>
   </div>
   <div class="doctor-image"> </div>

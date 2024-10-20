@@ -30,13 +30,13 @@ namespace AllsWellHealthMate.Controllers
                                       .FirstOrDefault();
             if ( user != null)
             {
-                var token = GenerateJwtToken(loginDto.Email);
+                var token = GenerateJwtToken(loginDto.Email,user.UserRole,user.Id);
                 return Ok(new { token });
             }
             return Unauthorized();
         }
 
-        private string GenerateJwtToken(string email)
+        private string GenerateJwtToken(string email, string role, int userId)
         {
             var jwtSettings = _configuration.GetSection("JwtSettings");
             var secretKey = Encoding.ASCII.GetBytes(jwtSettings.GetValue<string>("SecretKey"));
@@ -45,8 +45,10 @@ namespace AllsWellHealthMate.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                new Claim(ClaimTypes.Email, email)
-            }),
+                    new Claim(ClaimTypes.Email, email),               // Email claim
+                    new Claim(ClaimTypes.NameIdentifier, userId.ToString()),  // User ID claim (as sub or nameidentifier)
+                    new Claim(ClaimTypes.Role, role)                  // User role claim
+                }),
                 Expires = DateTime.UtcNow.AddMinutes(jwtSettings.GetValue<int>("ExpirationInMinutes")),
                 Issuer = jwtSettings.GetValue<string>("Issuer"),
                 Audience = jwtSettings.GetValue<string>("Audience"),
