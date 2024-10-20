@@ -41,12 +41,11 @@ namespace AllsWellHealthMate.Controllers
             var users = _userService.GetListOfUsersByRole(role);
             return Ok(users);
         }
-
+       
         [HttpPost]
         [Route("CreateUser")]
         public IActionResult CreateUser([FromBody] UserWrapperDTO userWrapperDTO)
-        {
-            
+        {  
             var createdUser = _userService.CreateUser(userWrapperDTO.userCreateDTO);
 
             if(userWrapperDTO.userCreateDTO.UserRole == (int)UserRoleEnum.Doctor)
