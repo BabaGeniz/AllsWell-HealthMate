@@ -10,7 +10,7 @@
       <button *ngIf="authService.isPatient()" class="btn btn-secondary">View Health Records</button>
 
       <button *ngIf="authService.isDoctor()" class="btn btn-primary">View Appointments</button>
-      <button *ngIf="authService.isDoctor()" class="btn btn-secondary">Create New Patient Record</button>
+      <button *ngIf="authService.isDoctor()" class="btn btn-secondary" (click)="navigateToCreateHealthRecord()">Create New Patient Record</button>
       <button *ngIf="authService.isDoctor()" class="btn btn-secondary">View/Update Patient Record</button>
 
     </div>

@@ -39,7 +39,9 @@
   background-color: #f8f8f8;
   color: #333;
 }
-
+.btn:hover {
+  cursor: pointer; 
+}
 .doctor-image {
   background-image: url('../../assets/doctor2.png');
   background-size: cover; /* Cover the entire area */
