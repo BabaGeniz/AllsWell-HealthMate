@@ -6,6 +6,16 @@ export interface UserCreate {
   userRole: number;
 }
 
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  age?: number;
+  height?: number; // In cm
+}
+
 export interface Provider {
   specialization: string;
   hospitalAffiliation: string;

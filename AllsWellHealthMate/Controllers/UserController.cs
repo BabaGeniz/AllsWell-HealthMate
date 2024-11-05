@@ -24,7 +24,7 @@ namespace AllsWellHealthMate.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetUserByID/{id}")]
         public ActionResult<User> GetUserById(int id)
         {
             var user = _userService.GetUserById(id);
@@ -64,7 +64,7 @@ namespace AllsWellHealthMate.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteUserByID/{id}")]
         public IActionResult DeleteUser(int id)
         {
             _userService.DeleteUser(id);

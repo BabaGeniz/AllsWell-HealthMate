@@ -1,0 +1,124 @@
+<app-header></app-header>
+
+<div class="health-record-container">
+  <!-- Dropdown Menu for Patients -->
+  <mat-form-field class="full-width">
+    <mat-label>Select Patient</mat-label>
+    <mat-select [(ngModel)]="selectedPatient" (selectionChange)="onPatientSelect($event.value)">
+      <mat-option *ngFor="let patient of patients" [value]="patient.id">
+        {{ patient.firstName }} {{ patient.lastName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Conditionally display the form when a patient is selected -->
+  <div *ngIf="selectedPatient">
+    <h3>Create Health Record for {{ patientData.firstName }}</h3>
+
+    <!-- Today's Date -->
+    <div class="form-group">
+      <h5 class="form-label">Today's Date</h5>
+      <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Month</mat-label>
+          <mat-select [(ngModel)]="selectedMonth1">
+            <mat-option *ngFor="let month of months" [value]="month">{{ month }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Day</mat-label>
+          <mat-select [(ngModel)]="selectedDay1">
+            <mat-option *ngFor="let day of days" [value]="day">{{ day }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Year</mat-label>
+          <mat-select [(ngModel)]="selectedYear1">
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button>
+          <mat-icon>calendar_today</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Patient Name -->
+    <div class="form-group">
+      <h5 class="form-label">Patient Name</h5>
+      <div class="form-row">
+
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" [(ngModel)]="patientData.firstName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" [(ngModel)]="patientData.lastName">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Health Metrics-->
+    <div class="form-group">
+      <h5 class="form-label">General Health Metrics</h5>
+      <mat-form-field appearance="outline" class="health-metrics">
+        <mat-label>Blood Pressure</mat-label>
+        <input matInput placeholder="" [(ngModel)]="bloodPressure">
+        <span matSuffix class="suffix-space">mmHg</span>
+      </mat-form-field>
+      <p></p>
+      <mat-form-field appearance="outline" class="health-metrics">
+        <mat-label>Heart Rate</mat-label>
+        <input matInput placeholder="" [(ngModel)]="heartRate">
+        <span matSuffix class="suffix-space">bpm</span>
+      </mat-form-field>
+      <p></p>
+      <mat-form-field appearance="outline" class="health-metrics">
+        <mat-label>Cholestrol</mat-label>
+        <input matInput placeholder="" [(ngModel)]="cholestrol">
+        <span matSuffix class="suffix-space">mg/Dl</span>
+      </mat-form-field>
+      <p></p>
+      <mat-form-field appearance="outline" class="health-metrics">
+        <mat-label>Glucose Level</mat-label>
+        <input matInput placeholder="" [(ngModel)]="glucoseLevel">
+        <span matSuffix class="suffix-space">mg/Dl</span>
+      </mat-form-field>
+      <p></p>
+      <mat-form-field appearance="outline" class="health-metrics">
+        <mat-label>BMI</mat-label>
+        <input matInput placeholder="" [(ngModel)]="bmi">
+      </mat-form-field>
+    </div>
+
+
+
+
+    <!-- Add a button to dynamically add a new prescription -->
+    <!-- <button type="button" mat-button (click)="addPrescription()">Add Prescription</button>-->
+    <!-- Referring Physician's Name -->
+
+    <!-- Practice Address -->
+    <div class="form-group">
+      <label>Practice Address</label>
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Address Line 1</mat-label>
+          <input matInput placeholder="Address Line 1" [(ngModel)]="addressLine1">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!healthRecordForm.valid">
+        Submit Health Record
+      </button>
+    </div>
+
+
+
+  </div>
+</div>
